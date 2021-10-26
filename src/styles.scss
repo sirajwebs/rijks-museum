@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+* {
+  line-height: initial;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+.bar-bg-color {
+  background: linear-gradient(8deg, #424243, #755320);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.underline-text {
+  border: 2px solid #fff;
+  border-radius: 50px;
+  margin-top: 5px;
+  width: 70px;
+}
+
+/* Scroll-bar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 70px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(105, 68, 33);
+  border-radius: 70px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(55, 55, 55);
+  border-radius: 70px;
+}
+/* Scroll-bar */

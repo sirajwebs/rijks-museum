@@ -1,0 +1,18 @@
+.main {
+  background: linear-gradient(141deg, #a2925f, transparent);
+  position: relative;
+  min-height: 100%;
+}
+
+.bg-img {
+  position: absolute;
+  opacity: 0.25;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.router {
+  margin-top: 80px;
+  min-height: 500px;
+}

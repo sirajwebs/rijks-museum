@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "rijks-exhibition": {
+    "rijks-museum": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rijks-exhibition",
+            "outputPath": "dist/rijks-museum",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "rijks-exhibition:build:production"
+              "browserTarget": "rijks-museum:build:production"
             },
             "development": {
-              "browserTarget": "rijks-exhibition:build:development"
+              "browserTarget": "rijks-museum:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rijks-exhibition:build"
+            "browserTarget": "rijks-museum:build"
           }
         },
         "test": {
@@ -107,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "rijks-exhibition"
+  "defaultProject": "rijks-museum"
 }
