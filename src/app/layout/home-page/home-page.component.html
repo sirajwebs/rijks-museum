@@ -1,5 +1,8 @@
 <ng-container *ngIf="rijksData">
-  <ng-container *ngFor="let data of rijksData.artObjects">
-    <img [src]="data.webImage.url" width="100" /><br />
-  </ng-container>
+  <div class="home-intro">
+    <div class="draw-box"></div>
+    <div class="rijks-title">RIJKS MUSEUM</div>
+  </div>
+  <app-search></app-search>
+  <app-gallery></app-gallery>
 </ng-container>

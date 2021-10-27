@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RijksDataService } from './../../shared/services/rijks-data.service';
 
 @Component({
   selector: 'app-gallery',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-
-  constructor() { }
+  rijksData: any;
+  constructor(
+    private readonly rijksDataService: RijksDataService,
+  ) { }
 
   ngOnInit(): void {
+    this.rijksDataService.getData().subscribe(data => {
+      this.rijksData = data;
+      console.log(data);
+    })
   }
-
 }
