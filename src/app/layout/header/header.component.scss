@@ -15,12 +15,12 @@
 }
 
 .logo {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  @extend .flex;
+  font-family: serif;
   color: white;
-  display: flex;
-  align-items: center;
   font-size: x-large;
   cursor: pointer;
+  text-transform: uppercase;
 
   img {
     margin-right: 10px;

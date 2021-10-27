@@ -10,6 +10,7 @@ import { HomePageComponent } from './layout/home-page/home-page.component';
 import { AngularMaterialModule } from './shared/modules/angular-material.module';
 import { ArtDetailsComponent } from './features/art-details/art-details.component';
 import { SearchComponent } from './features/search/search.component';
+import { GalleryComponent } from './features/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SearchComponent } from './features/search/search.component';
     HomePageComponent,
     FooterComponent,
     ArtDetailsComponent,
-    SearchComponent
+    SearchComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
