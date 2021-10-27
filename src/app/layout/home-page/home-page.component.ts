@@ -7,14 +7,15 @@ import { RijksDataService } from './../../shared/services/rijks-data.service';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-
+  rijksData: any;
   constructor(
     private readonly rijksDataService: RijksDataService,
   ) { }
 
   ngOnInit(): void {
-    this.rijksDataService.getData().subscribe(val => {
-      console.log(val);
+    this.rijksDataService.getData().subscribe(data => {
+      this.rijksData = data;
+      console.log(data);
     })
   }
 

@@ -1,1 +1,5 @@
-<p>home-page works!</p>
+<ng-container *ngIf="rijksData">
+  <ng-container *ngFor="let data of rijksData.artObjects">
+    <img [src]="data.webImage.url" width="100" /><br />
+  </ng-container>
+</ng-container>
