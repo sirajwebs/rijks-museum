@@ -28,4 +28,16 @@ export class RijksDataService {
         refCount(),
       );
   }
+
+  getCollectionById(objectNumber: string): Observable<any> {
+    /* 
+     * to get the data art Objects from all collection
+     */
+    return this.http.get<any>(`${API_URL}${objectNumber}${authkey}`)
+      .pipe(
+        // map((collection: Collection) => collection.artObjects),
+        publishReplay(1),
+        refCount(),
+      );
+  }
 }

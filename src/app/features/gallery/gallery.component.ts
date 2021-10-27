@@ -17,6 +17,11 @@ export class GalleryComponent implements OnInit {
     this.rijksDataService.getArtObjects().subscribe(artObjects => {
       this.artObjects = artObjects;
       console.log(artObjects);
-    })
+
+      this.rijksDataService.getCollectionById(artObjects[0].objectNumber).subscribe(collectionDetails => {
+        // this.artObjects = collectionDetails;
+        console.log(collectionDetails);
+      });
+    });
   }
 }

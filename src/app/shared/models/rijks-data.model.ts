@@ -14,7 +14,7 @@ export interface ArtObjects {
   longTitle: string;
   objectNumber: string;
   permitDownload?: boolean;
-  principalOrFirstMaker?: string;
+  principalOrFirstMaker: string;
   productionPlaces?: string[];
   showImage: boolean;
   title: string;
