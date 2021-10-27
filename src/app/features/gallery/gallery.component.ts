@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArtObjects } from 'src/app/shared/models/rijks-data.model';
 import { RijksDataService } from './../../shared/services/rijks-data.service';
 
 @Component({
@@ -7,15 +8,15 @@ import { RijksDataService } from './../../shared/services/rijks-data.service';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  rijksData: any;
+  artObjects: ArtObjects[] = [];
   constructor(
     private readonly rijksDataService: RijksDataService,
   ) { }
 
   ngOnInit(): void {
-    this.rijksDataService.getData().subscribe(data => {
-      this.rijksData = data;
-      console.log(data);
+    this.rijksDataService.getArtObjects().subscribe(artObjects => {
+      this.artObjects = artObjects;
+      console.log(artObjects);
     })
   }
 }

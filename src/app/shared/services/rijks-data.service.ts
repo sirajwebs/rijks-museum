@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { publishReplay, refCount } from 'rxjs/operators';
+import { map, publishReplay, refCount } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { ArtObjects } from '../models/rijks-data.model';
+import { Collection } from './../models/rijks-data.model';
 
 const API_KEY = environment.apiKey;
 const API_URL = environment.apiUrl;
@@ -15,11 +17,15 @@ export class RijksDataService {
 
   constructor(private http: HttpClient) { }
 
-  getData(): Observable<any> {
+  getArtObjects(): Observable<ArtObjects[]> {
     /* 
-     * to get the data
+     * to get the data art Objects from all collection
      */
-    return this.http.get<any>(`${API_URL}${authkey}`)
-      .pipe(publishReplay(1), refCount());
+    return this.http.get<Collection>(`${API_URL}${authkey}`)
+      .pipe(
+        map((collection: Collection) => collection.artObjects),
+        publishReplay(1),
+        refCount(),
+      );
   }
 }
