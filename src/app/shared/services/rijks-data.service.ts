@@ -31,7 +31,7 @@ export class RijksDataService {
 
   getCollectionById(objectNumber: string): Observable<any> {
     /* 
-     * to get the data art Objects from all collection
+     * to get the data of a art Object from all collection by assing object number as argument
      */
     return this.http.get<any>(`${API_URL}${objectNumber}${authkey}`)
       .pipe(
