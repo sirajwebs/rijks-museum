@@ -5,7 +5,7 @@
   <span>Back</span>
 </div>
 
-<div class="flex-column forecast-card">
+<div class="">
   <ng-container *ngIf="apiLoading$ | async">
     <mat-spinner diameter="30"></mat-spinner><br />
     loading...
@@ -17,6 +17,12 @@
     </div>
   </ng-container>
   <ng-container *ngIf="artDetails$ | async as artDetails">
-    artDetails works
+    <div>title : {{ artDetails.title }}</div>
+    <div>presenting Date : {{ artDetails.dating.presentingDate }}</div>
+    <div>description : {{ artDetails.description }}</div>
+    <div>long Title : {{ artDetails.longTitle }}</div>
+    <div>plaque Description : {{ artDetails.plaqueDescriptionDutch }}</div>
+    <div>Maker : {{ artDetails.principalOrFirstMaker }}</div>
+    <img [src]="artDetails.webImage.url" />
   </ng-container>
 </div>

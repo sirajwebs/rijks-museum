@@ -26,7 +26,7 @@ export class ArtDetailsComponent implements OnInit {
     * `artDetails$` reads api data, `apiLoading$` handles api loading state, `apiError$` handles api error state
     */
     this.route.params.subscribe((params) => {
-      this.artDetails$ = this.rijksDataService.getCollectionById(params.art).pipe(catchError(() => of(null)));
+      this.artDetails$ = this.rijksDataService.getCollectionByObjectId(params.art).pipe(catchError(() => of(null)));
       this.apiLoading$ = this.artDetails$.pipe(mapTo(false), startWith(true), distinctUntilChanged());
       this.apiError$ = this.artDetails$.pipe(map((value) => !value));
     });

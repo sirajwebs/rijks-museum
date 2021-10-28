@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, publishReplay, refCount } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { ArtObject, ArtObjectDetails, Collection } from '../models/rijks-data.model';
+import { ArtObject, ArtObjectDetails, ArtObjectPageDetails, Collection } from './../models/rijks-data.model';
 
 const API_KEY = environment.apiKey;
 const API_URL = environment.apiUrl;
@@ -28,12 +28,13 @@ export class RijksDataService {
       );
   }
 
-  getCollectionById(objectNumber: string): Observable<ArtObjectDetails> {
+  getCollectionByObjectId(objectNumber: string): Observable<ArtObjectDetails> {
     /* 
      * to get the data of a art Object from all collection by assing object number as argument
      */
-    return this.http.get<ArtObjectDetails>(`${API_URL}${objectNumber}${authkey}`)
+    return this.http.get<ArtObjectPageDetails>(`${API_URL}${objectNumber}${authkey}`)
       .pipe(
+        map((artObjectPageDetails: ArtObjectPageDetails) => artObjectPageDetails.artObject),
         publishReplay(1),
         refCount(),
       );
