@@ -3,8 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, publishReplay, refCount } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { ArtObjects } from '../models/rijks-data.model';
-import { Collection } from './../models/rijks-data.model';
+import { ArtObject, ArtObjectDetails, Collection } from '../models/rijks-data.model';
 
 const API_KEY = environment.apiKey;
 const API_URL = environment.apiUrl;
@@ -17,7 +16,7 @@ export class RijksDataService {
 
   constructor(private http: HttpClient) { }
 
-  getArtObjects(): Observable<ArtObjects[]> {
+  getArtObjects(): Observable<ArtObject[]> {
     /* 
      * to get the data art Objects from all collection
      */
@@ -29,13 +28,23 @@ export class RijksDataService {
       );
   }
 
-  getCollectionById(objectNumber: string): Observable<any> {
+  getCollectionById(objectNumber: string): Observable<ArtObjectDetails> {
     /* 
      * to get the data of a art Object from all collection by assing object number as argument
      */
-    return this.http.get<any>(`${API_URL}${objectNumber}${authkey}`)
+    return this.http.get<ArtObjectDetails>(`${API_URL}${objectNumber}${authkey}`)
       .pipe(
-        // map((collection: Collection) => collection.artObjects),
+        publishReplay(1),
+        refCount(),
+      );
+  }
+
+  getCollectionByMaker(maker: string): Observable<Collection> {
+    /* 
+     * to get the data of a art Object from all collection by maker name as argument
+     */
+    return this.http.get<Collection>(`${API_URL}${authkey}&involvedMaker=${maker}`)
+      .pipe(
         publishReplay(1),
         refCount(),
       );

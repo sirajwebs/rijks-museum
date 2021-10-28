@@ -1,8 +1,8 @@
 export interface Collection {
-  artObjects: ArtObjects[];
+  artObjects: ArtObject[];
 }
 
-export interface ArtObjects {
+export interface ArtObject {
   hasImage: boolean;
   headerImage: ImageDetails;
   webImage: ImageDetails;
@@ -13,18 +13,56 @@ export interface ArtObjects {
   }
   longTitle: string;
   objectNumber: string;
-  permitDownload?: boolean;
   principalOrFirstMaker: string;
-  productionPlaces?: string[];
   showImage: boolean;
   title: string;
 }
 
+export interface ArtObjectDetails {
+  artObject: {
+    id: string;
+    objectNumber: string;
+    language: string;
+    title: string;
+    webImage: ImageDetails;
+    description: string;
+    objectCollection: string[],
+    principalMakers: [
+      {
+        name: string;
+        placeOfBirth: string;
+        dateOfBirth: string;
+        dateOfDeath: string;
+      }
+    ],
+    plaqueDescriptionDutch: string;
+    techniques: string[],
+    productionPlaces: string[],
+    dating: {
+      presentingDate: string;
+    },
+    hasImage: boolean;
+    documentation: string[],
+    principalOrFirstMaker: string;
+    physicalMedium: string;
+    longTitle: string;
+    label: {
+      title: string;
+      makerLine: string;
+      description: string;
+      date: string;
+    },
+    showImage: boolean;
+  },
+  artObjectPage: {
+    id: string;
+    lang: string;
+    objectNumber: string;
+    plaqueDescription: string;
+  }
+}
+
 interface ImageDetails {
   guid: string;
-  height?: number;
-  offsetPercentageX?: number;
-  offsetPercentageY?: number;
   url: string;
-  width?: number;
 }

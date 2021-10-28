@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArtObjects } from 'src/app/shared/models/rijks-data.model';
+import { ArtObject } from 'src/app/shared/models/rijks-data.model';
 import { RijksDataService } from './../../shared/services/rijks-data.service';
 import { Observable, of } from 'rxjs';
 import { catchError, distinctUntilChanged, map, mapTo, startWith } from 'rxjs/operators';
@@ -10,7 +10,7 @@ import { catchError, distinctUntilChanged, map, mapTo, startWith } from 'rxjs/op
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  artObjects$ = new Observable<ArtObjects[] | null>();
+  artObjects$ = new Observable<ArtObject[] | null>();
   apiLoading$ = new Observable<boolean>();
   apiError$ = new Observable<boolean>();
 

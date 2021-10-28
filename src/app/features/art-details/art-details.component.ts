@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { catchError, distinctUntilChanged, map, mapTo, startWith } from 'rxjs/operators';
+import { ArtObjectDetails } from './../../shared/models/rijks-data.model';
 import { RijksDataService } from './../../shared/services/rijks-data.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { RijksDataService } from './../../shared/services/rijks-data.service';
   styleUrls: ['./art-details.component.scss']
 })
 export class ArtDetailsComponent implements OnInit {
-  artDetails$ = new Observable<any | null>();
+  artDetails$ = new Observable<ArtObjectDetails | null>();
   apiLoading$ = new Observable<boolean>();
   apiError$ = new Observable<boolean>();
 
