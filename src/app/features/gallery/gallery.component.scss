@@ -1,24 +1,27 @@
 @import "../../../styles.scss";
 
 .gallery-box {
-  @extend .flex;
-  flex-direction: column;
-
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .art-box {
+  box-sizing: border-box;
+  flex: calc(50% - 200px);
+
   @extend .flex;
   flex-direction: column;
-  width: 300px;
-  margin: 50px;
+  margin: 100px;
   padding: 50px;
   color: rgb(53, 35, 7);
   border: 1px solid rgb(255, 255, 255, 0.3);
   text-align: center;
 
   img {
-    width: 200px;
-    height: 200px;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
   }
 
   .title {

@@ -4,8 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build-local": "ng build",
-    "build": "npm i && ng build --prod",
+    "build": "ng build",
     "test": "ng test --code-coverage",
     "lint": "ng lint --fix",
     "watch": "ng build --watch --configuration development"
