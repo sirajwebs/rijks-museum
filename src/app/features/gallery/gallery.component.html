@@ -1,9 +1,11 @@
 <ng-container *ngIf="artObjects.length">
-  <ng-container *ngFor="let art of artObjects">
-    <div class="gallery-box">
-      <img [src]="art.webImage.url" width="100" />
-      <span class="title">{{ art.title }}</span>
-      <span class="artist">{{ art.principalOrFirstMaker }}</span>
-    </div>
-  </ng-container>
+  <div class="gallery-box">
+    <ng-container *ngFor="let art of artObjects">
+      <div class="art-box">
+        <img [src]="art.webImage.url" width="100" />
+        <span class="title">{{ art.title }}</span>
+        <span class="artist">{{ art.principalOrFirstMaker }}</span>
+      </div>
+    </ng-container>
+  </div>
 </ng-container>
