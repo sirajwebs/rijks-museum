@@ -1,7 +1,19 @@
-<ng-container *ngIf="artObjects.length">
+<ng-container *ngIf="apiLoading$ | async">
+  <mat-spinner class="" diameter="30"></mat-spinner><br />
+  loading...
+</ng-container>
+
+<ng-container *ngIf="apiError$ | async">
+  <mat-icon>error_outline</mat-icon><br />
+  <span class="error" id="error-block">
+    Failed to get art collection.
+  </span>
+</ng-container>
+
+<ng-container *ngIf="artObjects$ | async as artObjects">
   <div class="gallery-box">
     <div class="art-box" *ngFor="let art of artObjects">
-      <img [src]="art.webImage.url" width="100" />
+      <img [routerLink]="['/art-details', art.objectNumber]" [src]="art.webImage.url" />
       <span class="title">{{ art.title }}</span>
       <span class="artist">{{ art.principalOrFirstMaker }}</span>
     </div>
