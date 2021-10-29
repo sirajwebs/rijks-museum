@@ -13,10 +13,12 @@
 
   <ng-container *ngIf="artObjects">
     <div class="gallery-box">
-      <div class="art-box" *ngFor="let art of artObjects">
-        <img [routerLink]="['/art-details', art.objectNumber]" [src]="art.webImage.url" />
-        <span class="title">{{ art.title }}</span>
-        <span class="artist">{{ art.principalOrFirstMaker }}</span>
+      <div class="art-box-wrapper" *ngFor="let art of artObjects">
+        <div class="art-box-card" [routerLink]="['/art-details', art.objectNumber]">
+          <img [src]="art.webImage.url" />
+          <span class="title">{{ art.title }}</span>
+          <span class="artist"> <span>by</span> {{ art.principalOrFirstMaker }}</span>
+        </div>
       </div>
     </div>
   </ng-container>

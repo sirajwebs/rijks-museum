@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -8,6 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent implements OnInit {
+  @Input() set searchedQuery(makerName: string) {
+    this.searchArtControl.setValue(makerName);
+  };
+  @Input() iSelfPageSearch = false;
   searchArtControl = new FormControl('');
 
   constructor(
@@ -19,5 +23,8 @@ export class SearchBarComponent implements OnInit {
 
   searchArtwork() {
     this.router.navigate(['/search-results', this.searchArtControl.value]);
+    if (!this.iSelfPageSearch) {
+      this.searchArtControl.reset();
+    }
   }
 }

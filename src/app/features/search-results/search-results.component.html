@@ -1,2 +1,3 @@
-<app-search-bar></app-search-bar>
-<app-gallery [apiLoading]="apiLoading$ | async" [apiError]="apiError$ | async" [artObjects]="artDetailsByMaker$ | async">
+<app-search-bar class="search-bar" [iSelfPageSearch]="true" [searchedQuery]="searchedQuery"></app-search-bar>
+<app-gallery class="searched-gallery" [apiLoading]="apiLoading$ | async" [apiError]="apiError$ | async"
+  [artObjects]="artDetailsByMaker$ | async"></app-gallery>

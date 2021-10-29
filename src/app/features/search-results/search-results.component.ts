@@ -14,6 +14,7 @@ export class SearchResultsComponent implements OnInit {
   artDetailsByMaker$ = new Observable<ArtObject[] | null>();
   apiLoading$ = new Observable<boolean>();
   apiError$ = new Observable<boolean>();
+  searchedQuery = '';
 
   constructor(
     private readonly rijksDataService: RijksDataService,
@@ -26,9 +27,14 @@ export class SearchResultsComponent implements OnInit {
     * `artDetailsByMaker$` reads api data, `apiLoading$` handles api loading state, `apiError$` handles api error state
     */
     this.route.params.subscribe((params) => {
-      this.artDetailsByMaker$ = this.rijksDataService.getCollectionByMaker(params.query).pipe(catchError(() => of(null)));
+      this.searchedQuery = params.searchedQuery;
+      this.artDetailsByMaker$ = this.rijksDataService.getCollectionByMaker(params.searchedQuery).pipe(catchError(() => of(null)));
       this.apiLoading$ = this.artDetailsByMaker$.pipe(mapTo(false), startWith(true), distinctUntilChanged());
       this.apiError$ = this.artDetailsByMaker$.pipe(map((value) => !value));
     });
+  }
+
+  selfPageSearch(){
+
   }
 }
