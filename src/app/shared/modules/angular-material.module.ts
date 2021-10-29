@@ -11,6 +11,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [],
@@ -27,6 +28,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatGridListModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
+    BrowserAnimationsModule,
   ],
   exports: [
     MatToolbarModule,
@@ -40,6 +42,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatGridListModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
+    BrowserAnimationsModule,
   ]
 })
 export class AngularMaterialModule { }

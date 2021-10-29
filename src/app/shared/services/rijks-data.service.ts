@@ -16,7 +16,7 @@ export class RijksDataService {
 
   constructor(private http: HttpClient) { }
 
-  getArtObjects(): Observable<ArtObject[]> {
+  getFeaturedCollection(): Observable<ArtObject[]> {
     /* 
      * to get the data art Objects from all collection
      */
@@ -40,12 +40,13 @@ export class RijksDataService {
       );
   }
 
-  getCollectionByMaker(maker: string): Observable<Collection> {
+  getCollectionByMaker(maker: string): Observable<ArtObject[]> {
     /* 
      * to get the data of a art Object from all collection by maker name as argument
      */
     return this.http.get<Collection>(`${API_URL}${authkey}&involvedMaker=${maker}`)
       .pipe(
+        map((collection: Collection) => collection.artObjects),
         publishReplay(1),
         refCount(),
       );

@@ -1,21 +1,23 @@
-<ng-container *ngIf="apiLoading$ | async">
-  <mat-spinner class="" diameter="30"></mat-spinner><br />
-  loading...
-</ng-container>
+<div class="flex">
+  <ng-container *ngIf="apiLoading">
+    <mat-spinner class="" diameter="30"></mat-spinner><br />
+    loading...
+  </ng-container>
 
-<ng-container *ngIf="apiError$ | async">
-  <mat-icon>error_outline</mat-icon><br />
-  <span class="error" id="error-block">
-    Failed to get art collection.
-  </span>
-</ng-container>
+  <ng-container *ngIf="apiError">
+    <mat-icon>error_outline</mat-icon><br />
+    <span class="error" id="error-block">
+      Failed to get art collection.
+    </span>
+  </ng-container>
 
-<ng-container *ngIf="artObjects$ | async as artObjects">
-  <div class="gallery-box">
-    <div class="art-box" *ngFor="let art of artObjects">
-      <img [routerLink]="['/art-details', art.objectNumber]" [src]="art.webImage.url" />
-      <span class="title">{{ art.title }}</span>
-      <span class="artist">{{ art.principalOrFirstMaker }}</span>
+  <ng-container *ngIf="artObjects">
+    <div class="gallery-box">
+      <div class="art-box" *ngFor="let art of artObjects">
+        <img [routerLink]="['/art-details', art.objectNumber]" [src]="art.webImage.url" />
+        <span class="title">{{ art.title }}</span>
+        <span class="artist">{{ art.principalOrFirstMaker }}</span>
+      </div>
     </div>
-  </div>
-</ng-container>
+  </ng-container>
+</div>

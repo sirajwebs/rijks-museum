@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ArtObject } from 'src/app/shared/models/rijks-data.model';
-import { RijksDataService } from './../../shared/services/rijks-data.service';
-import { Observable, of } from 'rxjs';
-import { catchError, distinctUntilChanged, map, mapTo, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-gallery',
@@ -10,21 +7,11 @@ import { catchError, distinctUntilChanged, map, mapTo, startWith } from 'rxjs/op
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  artObjects$ = new Observable<ArtObject[] | null>();
-  apiLoading$ = new Observable<boolean>();
-  apiError$ = new Observable<boolean>();
+  @Input() artObjects: ArtObject[] | null = null;
+  @Input() apiLoading: boolean | null = null;
+  @Input() apiError: boolean | null = null;
 
-  constructor(
-    private readonly rijksDataService: RijksDataService,
-  ) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    /*
-     * call to the API to get art collection data 
-     * `artObjects$` reads api data, `apiLoading$` handles api loading state, `apiError$` handles api error state
-     */
-    this.artObjects$ = this.rijksDataService.getArtObjects().pipe(catchError(() => of(null)));
-    this.apiLoading$ = this.artObjects$.pipe(mapTo(false), startWith(true), distinctUntilChanged());
-    this.apiError$ = this.artObjects$.pipe(map((value) => !value));
-  }
+  ngOnInit(): void { }
 }

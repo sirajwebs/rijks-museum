@@ -9,8 +9,9 @@ import { HeaderComponent } from './layout/header/header.component';
 import { HomePageComponent } from './layout/home-page/home-page.component';
 import { AngularMaterialModule } from './shared/modules/angular-material.module';
 import { ArtDetailsComponent } from './features/art-details/art-details.component';
-import { SearchComponent } from './features/search/search.component';
+import { SearchBarComponent } from './features/search-bar/search-bar.component';
 import { GalleryComponent } from './features/gallery/gallery.component';
+import { SearchResultsComponent } from './features/search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +20,9 @@ import { GalleryComponent } from './features/gallery/gallery.component';
     HomePageComponent,
     FooterComponent,
     ArtDetailsComponent,
-    SearchComponent,
-    GalleryComponent
+    SearchBarComponent,
+    GalleryComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,

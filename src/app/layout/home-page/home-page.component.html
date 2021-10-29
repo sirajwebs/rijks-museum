@@ -3,8 +3,10 @@
     <div class="draw-box"></div>
     <div class="rijks-title">
       <span class="title">RIJKS MUSEUM</span>
-      <span class="details">We vertellen het verhaal van 800 jaar Nederlandse geschiedenis met de grote meesters Rembrandt, Vermeer en Van Gogh.</span>
+      <span class="details">We vertellen het verhaal van 800 jaar Nederlandse geschiedenis met de grote meesters
+        Rembrandt, Vermeer en Van Gogh.</span>
     </div>
   </div>
-  <app-gallery></app-gallery>
+  <app-gallery [apiLoading]="apiLoading$ | async" [apiError]="apiError$ | async" [artObjects]="featuredArtObjects$ | async">
+  </app-gallery>
 </ng-container>

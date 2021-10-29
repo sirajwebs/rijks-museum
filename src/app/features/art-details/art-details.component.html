@@ -16,13 +16,13 @@
       <br /> Failed to get collection details.
     </div>
   </ng-container>
-  <ng-container *ngIf="artDetails$ | async as artDetails">
-    <div>title : {{ artDetails.title }}</div>
-    <div>presenting Date : {{ artDetails.dating.presentingDate }}</div>
-    <div>description : {{ artDetails.description }}</div>
-    <div>long Title : {{ artDetails.longTitle }}</div>
-    <div>plaque Description : {{ artDetails.plaqueDescriptionDutch }}</div>
-    <div>Maker : {{ artDetails.principalOrFirstMaker }}</div>
-    <img [src]="artDetails.webImage.url" />
+  <ng-container *ngIf="artObjectDetails$ | async as artObjectDetails">
+    <div>title : {{ artObjectDetails.title }}</div>
+    <div>presenting Date : {{ artObjectDetails.dating.presentingDate }}</div>
+    <div>description : {{ artObjectDetails.description }}</div>
+    <div>long Title : {{ artObjectDetails.longTitle }}</div>
+    <div>plaque Description : {{ artObjectDetails.plaqueDescriptionDutch }}</div>
+    <div>Maker : {{ artObjectDetails.principalOrFirstMaker }}</div>
+    <img [src]="artObjectDetails.webImage.url" />
   </ng-container>
 </div>
