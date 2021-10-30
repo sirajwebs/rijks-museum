@@ -1,4 +1,19 @@
-# RijksMuseum
+# RijksMuseum <a style="font-size:20px" href="https://rijks-museum-nl.web.app/">(live demo)</a>
+
+<p align="center">
+    <img src="src/assets/homepage.png" width="390" height="auto">
+    <img src="src/assets/artdetails.png" width="390" height="auto">
+</p>
+
+Rijks museum application is exibition website to showcases the arts and crafts from some of featured master. 
+Homepage contains the the featured collection. You can search the collection by maker name. Also see the details by clicking on the collection. Details can be year of artswork, maker name, description of arts, material used, location of the collection created, techniques used etc.
+
+## View live demo at :
+https://rijks-museum-nl.web.app/
+
+
+
+## Development
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.11.
 
