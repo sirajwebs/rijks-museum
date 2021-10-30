@@ -16,8 +16,16 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.theme-color {
+  color: #432c08;
+}
+
+.theme-bg {
+  background-color: #432c08;
+}
+
 .bar-bg-color {
-  background: linear-gradient(8deg, #424243, #755320);
+  background: linear-gradient(8deg, #424243, #432c08);
 }
 
 .text-left {
@@ -41,8 +49,8 @@ body {
 .underline-text {
   border: 2px solid #fff;
   border-radius: 50px;
-  margin-top: 5px;
-  width: 70px;
+  margin-top: 10px;
+  width: 250px;
 }
 
 /* Scroll-bar */
@@ -55,11 +63,11 @@ body {
   border-radius: 70px;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgb(105, 68, 33);
+  background: #432c08;
   border-radius: 70px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(55, 55, 55);
+  background: #424243;
   border-radius: 70px;
 }
 /* Scroll-bar */

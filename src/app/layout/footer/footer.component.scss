@@ -1,8 +1,11 @@
+@import "../../../styles.scss";
+
 .developed-by {
+  @extend .theme-color;
+
   margin: 100px 50px 0;
   padding: 20px;
   text-align: center;
-  color: rgb(84, 42, 10);
   text-shadow: 1px 1px 3px #4d4d4d;
 
   a {

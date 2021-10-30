@@ -1,0 +1,12 @@
+@import "../../../styles.scss";
+
+.page-title {
+  @extend .flex;
+  @extend .theme-color;
+
+  flex-direction: column;
+  font-size: 60px;
+  text-transform: uppercase;
+  padding: 60px 20px;
+  font-family: initial;
+}

@@ -1,7 +1,6 @@
-.search-bar {
-  margin: 50px 20px;
-}
+@import "../../../styles.scss";
 
-.searched-gallery {
-  padding: 100px;
+.search-bar {
+  @extend .flex;
+  padding: 0px 20px 50px;
 }

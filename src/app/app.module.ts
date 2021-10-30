@@ -12,6 +12,7 @@ import { ArtDetailsComponent } from './features/art-details/art-details.componen
 import { SearchBarComponent } from './features/search-bar/search-bar.component';
 import { GalleryComponent } from './features/gallery/gallery.component';
 import { SearchResultsComponent } from './features/search-results/search-results.component';
+import { PageTitleComponent } from './layout/page-title/page-title.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SearchResultsComponent } from './features/search-results/search-results
     ArtDetailsComponent,
     SearchBarComponent,
     GalleryComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    PageTitleComponent
   ],
   imports: [
     BrowserModule,

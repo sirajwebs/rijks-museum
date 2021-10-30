@@ -15,9 +15,10 @@
 
 .art-box-card {
   @extend .flex;
+  @extend .theme-color;
+
   justify-content: flex-start;
   flex-direction: column;
-  color: rgb(67, 44, 8);
   text-align: center;
   cursor: pointer;
 

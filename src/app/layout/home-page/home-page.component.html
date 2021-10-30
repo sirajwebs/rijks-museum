@@ -7,6 +7,9 @@
         Rembrandt, Vermeer en Van Gogh.</span>
     </div>
   </div>
-  <app-gallery [apiLoading]="apiLoading$ | async" [apiError]="apiError$ | async" [artObjects]="featuredArtObjects$ | async">
+  <app-page-title>Aanbevolen collecties</app-page-title>
+
+  <app-gallery [apiLoading]="apiLoading$ | async" [apiError]="apiError$ | async"
+    [artObjects]="featuredArtObjects$ | async">
   </app-gallery>
 </ng-container>

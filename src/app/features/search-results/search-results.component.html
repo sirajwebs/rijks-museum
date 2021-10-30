@@ -1,3 +1,6 @@
-<app-search-bar class="search-bar" [iSelfPageSearch]="true" [searchedQuery]="searchedQuery"></app-search-bar>
-<app-gallery class="searched-gallery" [apiLoading]="apiLoading$ | async" [apiError]="apiError$ | async"
+<app-page-title>Zoek Kunstwerken</app-page-title>
+<div class="search-bar">
+  <app-search-bar [iSelfPageSearch]="true" [searchedQuery]="searchedQuery"></app-search-bar>
+</div>
+<app-gallery [apiLoading]="apiLoading$ | async" [apiError]="apiError$ | async"
   [artObjects]="artDetailsByMaker$ | async"></app-gallery>

@@ -1,11 +1,13 @@
-<div class="" routerLink="/home">
-  <button mat-fab color="primary" aria-label="Back">
-    <mat-icon>arrow_back</mat-icon>
-  </button>
-  <span>Back</span>
-</div>
+<div class="art-details-wrapper">
+  <div class="back-btn" routerLink="/home">
+    <button mat-fab color="primary" aria-label="Back">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span>Back</span>
+  </div>
 
-<div class="">
+  <app-page-title>Kunstwerken Details</app-page-title>
+
   <ng-container *ngIf="apiLoading$ | async">
     <mat-spinner diameter="30"></mat-spinner><br />
     loading...

@@ -1,4 +1,4 @@
-<mat-form-field class="form-field" floatLabel="never">
+<mat-form-field class="form-field" [class.large-form-field]="iSelfPageSearch" floatLabel="never">
   <input matInput placeholder="Search by maker name" [formControl]="searchArtControl" type="text" name="searchArtControl"
     autocomplete="off" (keyup.enter)="searchArtwork()">
   <button mat-button *ngIf="searchArtControl.value" matSuffix mat-icon-button aria-label="Clear"
