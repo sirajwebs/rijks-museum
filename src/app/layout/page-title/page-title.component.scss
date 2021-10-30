@@ -10,3 +10,11 @@
   padding: 60px 20px;
   font-family: initial;
 }
+
+@media screen and (max-width: 768px) {
+  .page-title {
+    font-size: 40px;
+    padding: 30px 10px;
+    text-align: center;
+  }
+}

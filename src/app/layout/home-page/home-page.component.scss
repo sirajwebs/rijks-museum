@@ -48,12 +48,16 @@
 
 @media screen and (max-width: 768px) {
   .draw-box {
-    width: calc(100% - 40px);
-    height: calc(100% - 40px);
-    margin: 20px 20px;
+    width: calc(100% - 80px);
+    height: calc(100% - 80px);
+    margin: 40px 40px;
   }
   .rijks-title {
     margin: 10px;
     overflow-wrap: anywhere;
+
+    .title {
+      font-size: 80px;
+    }
   }
 }
