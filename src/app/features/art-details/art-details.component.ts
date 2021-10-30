@@ -11,8 +11,6 @@ import { RijksDataService } from './../../shared/services/rijks-data.service';
   styleUrls: ['./art-details.component.scss']
 })
 export class ArtDetailsComponent implements OnInit {
-   backRoute = '/';
-
   artObjectDetails$ = new Observable<ArtObjectDetails | null>();
   apiLoading$ = new Observable<boolean>();
   apiError$ = new Observable<boolean>();

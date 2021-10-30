@@ -1,6 +1,6 @@
 <div class="flex">
   <app-api-loading *ngIf="apiLoading"></app-api-loading>
-  <app-api-error *ngIf="apiError"></app-api-error>
+  <app-api-error *ngIf="apiError">collecties</app-api-error>
 
   <div class="gallery-box" *ngIf="artObjects">
     <div class="art-box-wrapper" *ngFor="let art of artObjects">

@@ -1,9 +1,9 @@
 <div class="art-details-wrapper">
-  <app-back-button [route]="backRoute"></app-back-button>
+  <app-back-button></app-back-button>
   <app-page-title>Kunstwerken Details</app-page-title>
 
   <app-api-loading *ngIf="apiLoading$ | async"></app-api-loading>
-  <app-api-error *ngIf="apiError$ | async"></app-api-error>
+  <app-api-error *ngIf="apiError$ | async">kunstwerken</app-api-error>
 
   <ng-container *ngIf="artObjectDetails$ | async as artObjectDetails">
     <div>title : {{ artObjectDetails.title }}</div>

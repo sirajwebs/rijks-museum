@@ -1,0 +1,10 @@
+@import "../../../styles.scss";
+
+.loading {
+  @extend .flex;
+  @extend .theme-color;
+
+  span {
+    padding-left: 10px;
+  }
+}

@@ -1,4 +1,4 @@
-<div class="back-btn" [routerLink]="route">
+<div class="back-btn" (click)="_location.back()">
   <button mat-fab color="primary" aria-label="Back">
     <mat-icon>arrow_back</mat-icon>
   </button>
