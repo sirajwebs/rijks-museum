@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { AppModule } from 'src/app/app.module';
 import { SearchBarComponent } from './search-bar.component';
 
@@ -10,7 +11,7 @@ describe('SearchBarComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ SearchBarComponent ],
-      imports: [AppModule, HttpClientModule],
+      imports: [AppModule, RouterTestingModule, HttpClientModule],
     })
     .compileComponents();
   });
@@ -23,5 +24,17 @@ describe('SearchBarComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should test searchArtwork()', () => {
+    component.searchArtControl.setValue('test');
+
+    component.iSelfPageSearch = true;
+    component.searchArtwork();
+    expect(component.searchArtControl.value).toBe('test');
+
+    component.iSelfPageSearch = false;
+    component.searchArtwork();
+    expect(component.searchArtControl.value).toBeNull();
   });
 });

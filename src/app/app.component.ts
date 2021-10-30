@@ -13,8 +13,4 @@ export class AppComponent {
    * `/layout` contain the stuctural components like header, home page.
    *  services, imported modules, models are shared among application
    */
-
-  scrollToTop() {
-    window.scroll(0, 0);
-  }
 }

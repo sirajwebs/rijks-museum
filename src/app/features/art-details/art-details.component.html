@@ -18,15 +18,15 @@
     <div class="art-deatils">
       <div class="detail-text" *ngIf="artObjectDetails.objectCollection.length">
         <span>verzameling</span>
-        {{ toString(artObjectDetails.objectCollection) }}
+        {{ artObjectDetails.objectCollection.join(', ') }}
       </div>
       <div class="detail-text" *ngIf="artObjectDetails.techniques.length">
         <span>technieken</span>
-        {{ toString(artObjectDetails.techniques) }}
+        {{ artObjectDetails.techniques.join(', ') }}
       </div>
       <div class="detail-text" *ngIf="artObjectDetails.productionPlaces.length">
         <span>productieplaatsen</span>
-        {{ toString(artObjectDetails.productionPlaces) }}
+        {{ artObjectDetails.productionPlaces.join(', ') }}
       </div>
       <div class="detail-text"><span>fysiek medium</span>{{ artObjectDetails.physicalMedium }}</div>
     </div>
