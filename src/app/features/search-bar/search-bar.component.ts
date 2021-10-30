@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.scss']
 })
-export class SearchBarComponent implements OnInit {
+export class SearchBarComponent {
   @Input() set searchedQuery(makerName: string) {
     this.searchArtControl.setValue(makerName);
   };
@@ -17,9 +17,6 @@ export class SearchBarComponent implements OnInit {
   constructor(
     private readonly router: Router,
   ) { }
-
-  ngOnInit(): void {
-  }
 
   searchArtwork() {
     this.router.navigate(['/search-results', this.searchArtControl.value]);

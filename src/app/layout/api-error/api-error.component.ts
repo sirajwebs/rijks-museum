@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-api-error',
   templateUrl: './api-error.component.html',
   styleUrls: ['./api-error.component.scss']
 })
-export class ApiErrorComponent implements OnInit {
+export class ApiErrorComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

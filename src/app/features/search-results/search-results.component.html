@@ -4,4 +4,9 @@
 </div>
 <app-gallery [apiLoading]="apiLoading$ | async" [apiError]="apiError$ | async"
   [artObjects]="artDetailsByMaker$ | async"></app-gallery>
-  
+<ng-container *ngIf="artDetailsByMaker$ | async as artDetailsByMaker">
+  <div class="no-data" *ngIf="!artDetailsByMaker.length">
+    <mat-icon>error_outline</mat-icon>
+    <span>We hebben niet gevonden wat u zoekt. Probeer het met de juiste gegevens.</span>
+  </div>
+</ng-container>

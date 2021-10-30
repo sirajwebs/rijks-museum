@@ -6,12 +6,37 @@
   <app-api-error *ngIf="apiError$ | async">kunstwerken</app-api-error>
 
   <ng-container *ngIf="artObjectDetails$ | async as artObjectDetails">
-    <div>title : {{ artObjectDetails.title }}</div>
-    <div>presenting Date : {{ artObjectDetails.dating.presentingDate }}</div>
-    <div>description : {{ artObjectDetails.description }}</div>
-    <div>long Title : {{ artObjectDetails.longTitle }}</div>
-    <div>plaque Description : {{ artObjectDetails.plaqueDescriptionDutch }}</div>
-    <div>Maker : {{ artObjectDetails.principalOrFirstMaker }}</div>
-    <img [src]="artObjectDetails.webImage.url" />
+    <div class="details-wrapper">
+      <div class="draw-box"></div>
+      <div class="maker-details">
+        <div class="title">{{ artObjectDetails.title }}</div>
+        <div class="detail-text"><span>presentatiedatum</span>{{ artObjectDetails.dating.presentingDate }}</div>
+        <div class="detail-text"><span>door</span>{{ artObjectDetails.principalOrFirstMaker }}</div>
+      </div>
+      <img [src]="artObjectDetails.webImage.url" />
+    </div>
+    <div class="art-deatils">
+      <div class="detail-text" *ngIf="artObjectDetails.objectCollection.length">
+        <span>verzameling</span>
+        {{ toString(artObjectDetails.objectCollection) }}
+      </div>
+      <div class="detail-text" *ngIf="artObjectDetails.techniques.length">
+        <span>technieken</span>
+        {{ toString(artObjectDetails.techniques) }}
+      </div>
+      <div class="detail-text" *ngIf="artObjectDetails.productionPlaces.length">
+        <span>productieplaatsen</span>
+        {{ toString(artObjectDetails.productionPlaces) }}
+      </div>
+      <div class="detail-text"><span>fysiek medium</span>{{ artObjectDetails.physicalMedium }}</div>
+    </div>
+    <div class="other-details-wrapper">
+      <div class="title">{{ artObjectDetails.longTitle }}</div>
+      <hr />
+      <br />
+      <div class="detail-text"><span>Omschrijving</span>{{ artObjectDetails.description }}</div>
+      <br />
+      <div class="detail-text"><span>plaquette beschrijving</span>{{ artObjectDetails.plaqueDescriptionDutch }}</div>
+    </div>
   </ng-container>
 </div>

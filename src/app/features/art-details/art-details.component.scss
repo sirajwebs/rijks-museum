@@ -2,4 +2,72 @@
 
 .art-details-wrapper {
   padding: 0 50px;
+  @extend .theme-color;
+}
+
+.details-wrapper {
+  @extend .flex;
+  position: relative;
+  justify-content: space-evenly;
+  padding: 0 50px;
+
+  .maker-details {
+    max-width: 40%;
+  }
+
+  img {
+    @extend .box-border;
+    border-color: blanchedalmond;
+    max-width: 50%;
+    z-index: 2;
+    transition: transform 1s ease;
+  }
+
+  img:hover {
+    transform: translateX(10px);
+  }
+}
+
+.draw-box {
+  @extend .draw-box;
+  border-color: blanchedalmond;
+  width: calc(100% - 100px);
+  height: calc(100% - 100px);
+  margin: 0px;
+  z-index: 1;
+}
+
+.detail-text {
+  margin-top: 15px;
+  font-size: 25px;
+  font-style: italic;
+
+  span {
+    font-family: "Times New Roman", Times, serif;
+    margin-right: 3px;
+    font-size: 20px;
+    color: black;
+  }
+}
+
+.title {
+  font-size: 40px;
+}
+
+.art-deatils {
+  @extend .box-border;
+  padding: 5px 50px 20px;
+  margin: 100px 200px 50px;
+  text-align: right;
+}
+
+.other-details-wrapper {
+  padding: 50px;
+
+  hr {
+    margin: 20px 0;
+    height: 2px;
+    background: azure;
+    border: 0;
+  }
 }

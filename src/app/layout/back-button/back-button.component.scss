@@ -11,7 +11,7 @@
   cursor: pointer;
 
   button {
-    @extend .theme-bg;
+    background-color: transparent;
   }
 
   span {

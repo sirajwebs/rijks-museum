@@ -31,4 +31,8 @@ export class ArtDetailsComponent implements OnInit {
       this.apiError$ = this.artObjectDetails$.pipe(map((value) => !value));
     });
   }
+
+  toString(array: string[]): string {
+    return array.join(', ');
+  }
 }

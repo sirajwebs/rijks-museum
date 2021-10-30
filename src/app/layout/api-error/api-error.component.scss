@@ -3,6 +3,7 @@
 .error {
   @extend .flex;
   @extend .theme-color;
+  font-size: 20px;
 
   span {
     padding-left: 10px;

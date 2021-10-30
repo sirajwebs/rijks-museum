@@ -61,6 +61,19 @@ body {
   width: 250px;
 }
 
+.box-border {
+  border: 3px solid rgba(255, 255, 255, 0.25);
+}
+
+.draw-box {
+  @extend .box-border;
+  
+  width: calc(100% - 100px);
+  height: calc(100% - 100px);
+  margin: 50px;
+  position: absolute;
+}
+
 /* Scroll-bar */
 ::-webkit-scrollbar {
   width: 7px;

@@ -13,13 +13,13 @@
   transform: scale(1.02);
 }
 
-.draw-box,
 .rijks-title {
   position: absolute;
 }
 
 .draw-box {
-  border: 1px solid rgb(255, 255, 255, 0.3);
+  @extend .draw-box;
+
   width: calc(100% - 400px);
   height: calc(100% - 100px);
   margin: 50px 200px;

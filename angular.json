@@ -103,9 +103,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "rijks-museum"
+  "defaultProject": "rijks-museum",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

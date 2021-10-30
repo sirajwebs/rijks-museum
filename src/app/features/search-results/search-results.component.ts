@@ -33,8 +33,4 @@ export class SearchResultsComponent implements OnInit {
       this.apiError$ = this.artDetailsByMaker$.pipe(map((value) => !value));
     });
   }
-
-  selfPageSearch(){
-
-  }
 }
