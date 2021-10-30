@@ -1,26 +1,5 @@
 @import "../../../styles.scss";
 
 .art-details-wrapper {
-  padding: 0 50px 50px;
-}
-
-.back-btn {
-  @extend .flex;
-  @extend .theme-color;
-
-  justify-content: flex-start;
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  cursor: pointer;
-
-  button {
-    @extend .theme-bg;
-  }
-
-  span {
-    font-size: 20px;
-    padding-left: 10px;
-    text-transform: uppercase;
-  }
+  padding: 0 50px;
 }

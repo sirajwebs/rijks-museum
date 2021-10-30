@@ -1,25 +1,14 @@
 <div class="flex">
-  <ng-container *ngIf="apiLoading">
-    <mat-spinner class="" diameter="30"></mat-spinner><br />
-    loading...
-  </ng-container>
+  <app-api-loading *ngIf="apiLoading"></app-api-loading>
+  <app-api-error *ngIf="apiError"></app-api-error>
 
-  <ng-container *ngIf="apiError">
-    <mat-icon>error_outline</mat-icon><br />
-    <span class="error" id="error-block">
-      Failed to get art collection.
-    </span>
-  </ng-container>
-
-  <ng-container *ngIf="artObjects">
-    <div class="gallery-box">
-      <div class="art-box-wrapper" *ngFor="let art of artObjects">
-        <div class="art-box-card" [routerLink]="['/art-details', art.objectNumber]">
-          <img [src]="art.webImage.url" />
-          <span class="title">{{ art.title }}</span>
-          <span class="artist"> <span>by</span> {{ art.principalOrFirstMaker }}</span>
-        </div>
+  <div class="gallery-box" *ngIf="artObjects">
+    <div class="art-box-wrapper" *ngFor="let art of artObjects">
+      <div class="art-box-card" [routerLink]="['/art-details', art.objectNumber]">
+        <img [src]="art.webImage.url" />
+        <span class="title">{{ art.title }}</span>
+        <span class="artist"> <span>by</span> {{ art.principalOrFirstMaker }}</span>
       </div>
     </div>
-  </ng-container>
+  </div>
 </div>

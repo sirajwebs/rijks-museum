@@ -13,6 +13,9 @@ import { SearchBarComponent } from './features/search-bar/search-bar.component';
 import { GalleryComponent } from './features/gallery/gallery.component';
 import { SearchResultsComponent } from './features/search-results/search-results.component';
 import { PageTitleComponent } from './layout/page-title/page-title.component';
+import { BackButtonComponent } from './layout/back-button/back-button.component';
+import { ApiErrorComponent } from './layout/api-error/api-error.component';
+import { ApiLoadingComponent } from './layout/api-loading/api-loading.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { PageTitleComponent } from './layout/page-title/page-title.component';
     SearchBarComponent,
     GalleryComponent,
     SearchResultsComponent,
-    PageTitleComponent
+    PageTitleComponent,
+    BackButtonComponent,
+    ApiErrorComponent,
+    ApiLoadingComponent
   ],
   imports: [
     BrowserModule,

@@ -1,23 +1,10 @@
 <div class="art-details-wrapper">
-  <div class="back-btn" routerLink="/home">
-    <button mat-fab color="primary" aria-label="Back">
-      <mat-icon>arrow_back</mat-icon>
-    </button>
-    <span>Back</span>
-  </div>
-
+  <app-back-button [route]="backRoute"></app-back-button>
   <app-page-title>Kunstwerken Details</app-page-title>
 
-  <ng-container *ngIf="apiLoading$ | async">
-    <mat-spinner diameter="30"></mat-spinner><br />
-    loading...
-  </ng-container>
-  <ng-container *ngIf="apiError$ | async">
-    <div class="error" id="error-block">
-      <mat-icon>error_outline</mat-icon>
-      <br /> Failed to get collection details.
-    </div>
-  </ng-container>
+  <app-api-loading *ngIf="apiLoading$ | async"></app-api-loading>
+  <app-api-error *ngIf="apiError$ | async"></app-api-error>
+
   <ng-container *ngIf="artObjectDetails$ | async as artObjectDetails">
     <div>title : {{ artObjectDetails.title }}</div>
     <div>presenting Date : {{ artObjectDetails.dating.presentingDate }}</div>
