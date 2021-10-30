@@ -2,7 +2,7 @@
   <input matInput placeholder="Zoeken op naam van de maker" [formControl]="searchArtControl" type="text" name="searchArtControl"
     autocomplete="off" (keyup.enter)="searchArtwork()">
   <button mat-button *ngIf="searchArtControl.value" matSuffix mat-icon-button aria-label="Doorzichtig"
-    (click)="searchArtControl.setValue('')">
+    (click)="searchArtControl.reset()">
     <mat-icon>close</mat-icon>
   </button>
   <button mat-button matSuffix mat-icon-button aria-label="Zoeken op naam van de maker" (click)="searchArtwork()">
