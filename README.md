@@ -1,8 +1,8 @@
 # RijksMuseum <a style="font-size:20px" href="https://rijks-museum-nl.web.app/">(live demo)</a>
 
 <p align="center">
-    <img src="src/assets/homepage.png" width="390" height="auto">
-    <img src="src/assets/artdetails.png" width="390" height="auto">
+    <img src="src/assets/homepage.jpg" width="390" height="auto">
+    <img src="src/assets/artdetails.jpg" width="390" height="auto">
 </p>
 
 Rijks museum application is exibition website to showcases the arts and crafts from some of featured master. 
