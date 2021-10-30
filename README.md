@@ -8,9 +8,11 @@
 Rijks museum application is exibition website to showcases the arts and crafts from some of featured master. 
 Homepage contains the the featured collection. You can search the collection by maker name. Also see the details by clicking on the collection. Details can be year of artswork, maker name, description of arts, material used, location of the collection created, techniques used etc.
 
+Aplication is compatible with all screen sizes mobile, tablet, desktop.
+With cross browser compatibility like Chrome, Edge, Firefox.
+
 ## View live demo at :
 https://rijks-museum-nl.web.app/
-
 
 
 ## Development
