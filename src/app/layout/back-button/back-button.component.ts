@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BackButtonComponent implements OnInit {
 
-  constructor(public _location: Location) { }
+  constructor(public readonly _location: Location) { }
 
   ngOnInit(): void {
   }

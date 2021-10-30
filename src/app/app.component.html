@@ -2,7 +2,7 @@
   <img class="bg-img" src="../assets/images/rijks-bg.png">
   <app-header></app-header>
   <div class="router">
-    <router-outlet></router-outlet>
+    <router-outlet (activate)="scrollToTop()" ></router-outlet>
   </div>
   <app-footer></app-footer>
 </div>

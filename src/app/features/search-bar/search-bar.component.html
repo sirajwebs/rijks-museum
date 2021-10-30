@@ -1,11 +1,11 @@
 <mat-form-field class="form-field" [class.large-form-field]="iSelfPageSearch" floatLabel="never">
-  <input matInput placeholder="Search by maker name" [formControl]="searchArtControl" type="text" name="searchArtControl"
+  <input matInput placeholder="Zoeken op naam van de maker" [formControl]="searchArtControl" type="text" name="searchArtControl"
     autocomplete="off" (keyup.enter)="searchArtwork()">
-  <button mat-button *ngIf="searchArtControl.value" matSuffix mat-icon-button aria-label="Clear"
+  <button mat-button *ngIf="searchArtControl.value" matSuffix mat-icon-button aria-label="Doorzichtig"
     (click)="searchArtControl.setValue('')">
     <mat-icon>close</mat-icon>
   </button>
-  <button mat-button matSuffix mat-icon-button aria-label="Search by maker name" (click)="searchArtwork()">
+  <button mat-button matSuffix mat-icon-button aria-label="Zoeken op naam van de maker" (click)="searchArtwork()">
     <mat-icon>search</mat-icon>
   </button>
 </mat-form-field>

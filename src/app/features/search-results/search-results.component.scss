@@ -4,3 +4,10 @@
   @extend .flex;
   padding: 0px 20px 50px;
 }
+
+.search-input-box {
+  @extend .theme-bg-light;
+
+  border-radius: 50px;
+  padding: 0px 50px 10px;
+}
